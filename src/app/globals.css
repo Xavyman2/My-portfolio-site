@@ -1,26 +1,273 @@
 @import "tailwindcss";
 
+@theme {
+  /* Base colors - Modern Tech Palette */
+  --color-midnight: oklch(15% 0.03 250);          /* Deep blue-black */
+  --color-slate: oklch(98% 0.005 250);            /* Cool white */
+  --color-card-light: oklch(100% 0 0);            /* Pure white for cards */
+  --color-muted-light: oklch(95% 0.01 250);       /* Light gray-blue */
+  --color-border-light: oklch(90% 0.01 250);      /* Light border */
+  
+  /* Dark mode variants */
+  --color-card-dark: oklch(18% 0.03 250);         /* Dark card */
+  --color-muted-dark: oklch(25% 0.03 250);        /* Dark muted */
+  --color-border-dark: oklch(30% 0.03 250);       /* Dark border */
+  
+  /* Primary - Electric Cyan/Blue */
+  --color-cyan-light: oklch(70% 0.25 230);        /* Light mode primary */
+  --color-cyan-dark: oklch(75% 0.25 230);         /* Dark mode primary (brighter) */
+  --color-cyan-foreground: oklch(100% 0 0);       /* White text on cyan */
+  
+  /* Secondary - Purple */
+  --color-purple-light: oklch(60% 0.22 290);      /* Light mode secondary */
+  --color-purple-dark: oklch(65% 0.22 290);       /* Dark mode secondary (brighter) */
+  --color-purple-foreground: oklch(100% 0 0);     /* White text on purple */
+  
+  /* Accent - Neon Green */
+  --color-green-light: oklch(75% 0.20 150);       /* Light mode accent */
+  --color-green-dark: oklch(80% 0.20 150);        /* Dark mode accent (brighter) */
+  --color-green-foreground: oklch(15% 0.03 250);  /* Dark text on green */
+  
+  /* Destructive - Red */
+  --color-destructive: oklch(60% 0.25 25);
+  --color-destructive-foreground: oklch(100% 0 0);
+  
+  /* Ring color for focus states */
+  --color-ring: oklch(65% 0.25 230);
+}
+
+/* Default (Light) mode */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-background: var(--color-slate);
+  --color-foreground: var(--color-midnight);
+  --color-card: var(--color-card-light);
+  --color-primary: var(--color-cyan-light);
+  --color-primary-foreground: var(--color-cyan-foreground);
+  --color-secondary: var(--color-purple-light);
+  --color-secondary-foreground: var(--color-purple-foreground);
+  --color-accent: var(--color-green-light);
+  --color-accent-foreground: var(--color-green-foreground);
+  --color-muted: var(--color-muted-light);
+  --color-border: var(--color-border-light);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Dark mode */
+:root.dark {
+  --color-background: var(--color-midnight);
+  --color-foreground: var(--color-slate);
+  --color-card: var(--color-card-dark);
+  --color-primary: var(--color-cyan-dark);
+  --color-primary-foreground: var(--color-cyan-foreground);
+  --color-secondary: var(--color-purple-dark);
+  --color-secondary-foreground: var(--color-purple-foreground);
+  --color-accent: var(--color-green-dark);
+  --color-accent-foreground: var(--color-green-foreground);
+  --color-muted: var(--color-muted-dark);
+  --color-border: var(--color-border-dark);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-foreground);
+  background-color: var(--color-background);
 }
+
+.skip-link {
+  position: absolute;
+  top: -2.5rem;
+  left: 0.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  padding: 0.5rem;
+  z-index: 50;
+  text-decoration: none;
+  border-radius: 0.25rem;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* Marquee slideshow animations */
+@keyframes marquee {
+  from { 
+    transform: translateX(0%); 
+  }
+  to { 
+    transform: translateX(-100%); 
+  }
+}
+
+@keyframes marquee-reverse {
+  from { 
+    transform: translateX(-100%); 
+  }
+  to { 
+    transform: translateX(0%); 
+  }
+}
+
+/* Animation classes */
+.animate-marquee {
+  animation: marquee 100s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 100s linear infinite;
+}
+
+/* Performance optimizations */
+.animate-marquee,
+.animate-marquee-reverse {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Gradient shift animation for services hero */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* 404 Page Animations */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-40px, 40px) rotate(180deg);
+  }
+}
+
+@keyframes float-fast {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(40px, -20px);
+  }
+  50% {
+    transform: translate(-30px, -40px);
+  }
+  75% {
+    transform: translate(20px, 30px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+    opacity: 0.3;
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    opacity: 0.5;
+  }
+  40% {
+    transform: translate(2px, -2px);
+    opacity: 0.2;
+  }
+  60% {
+    transform: translate(-2px, -2px);
+    opacity: 0.4;
+  }
+  80% {
+    transform: translate(2px, 2px);
+    opacity: 0.3;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up-delayed {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 15s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 10s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-glitch {
+  animation: glitch 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up-delayed {
+  animation: fade-in-up-delayed 1.2s ease-out forwards;
+}
+
+/* Clean animations without debug borders */

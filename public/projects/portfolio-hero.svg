@@ -1,0 +1,16 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f4f1de"/>
+  <rect x="0" y="0" width="100%" height="80" fill="#3d405b"/>
+  <circle cx="40" cy="40" r="8" fill="#e07a5f"/>
+  <circle cx="60" cy="40" r="8" fill="#81b29a"/>
+  <circle cx="80" cy="40" r="8" fill="#f2cc8f"/>
+  <rect x="20" y="100" width="180" height="120" rx="8" fill="#ffffff" opacity="0.8"/>
+  <rect x="220" y="100" width="180" height="120" rx="8" fill="#ffffff" opacity="0.8"/>
+  <rect x="420" y="100" width="160" height="120" rx="8" fill="#ffffff" opacity="0.8"/>
+  <circle cx="110" cy="160" r="30" fill="#81b29a" opacity="0.5"/>
+  <circle cx="310" cy="160" r="30" fill="#e07a5f" opacity="0.5"/>
+  <circle cx="500" cy="160" r="25" fill="#f2cc8f" opacity="0.5"/>
+  <rect x="20" y="240" width="560" height="60" rx="8" fill="#3d405b" opacity="0.1"/>
+  <text x="300" y="340" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#3d405b">Creative Portfolio</text>
+  <text x="300" y="365" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#3d405b" opacity="0.7">Award-Winning Design</text>
+</svg>
