@@ -270,4 +270,160 @@ body {
   animation: fade-in-up-delayed 1.2s ease-out forwards;
 }
 
+/* Animated Connected Dots Background */
+@keyframes dots-float-1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.8;
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.2);
+    opacity: 1;
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.8);
+    opacity: 0.6;
+  }
+}
+
+@keyframes dots-float-2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-40px, 40px) scale(1.3);
+    opacity: 1;
+  }
+}
+
+@keyframes dots-float-3 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1.1);
+    opacity: 0.9;
+  }
+  25% {
+    transform: translate(40px, -20px) scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-30px, -40px) scale(1.4);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(20px, 30px) scale(0.7);
+    opacity: 0.5;
+  }
+}
+
+@keyframes connection-pulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animated-dots-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.animated-dots-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, var(--color-primary) 2px, transparent 2px),
+    radial-gradient(circle at 80% 20%, var(--color-secondary) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 40% 80%, var(--color-accent) 1px, transparent 1px),
+    radial-gradient(circle at 60% 30%, var(--color-primary) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 90% 70%, var(--color-secondary) 2px, transparent 2px),
+    radial-gradient(circle at 10% 90%, var(--color-accent) 1px, transparent 1px);
+  background-size: 
+    150px 150px,
+    200px 200px,
+    100px 100px,
+    180px 180px,
+    120px 120px,
+    160px 160px;
+  animation: dots-float-1 20s ease-in-out infinite;
+  opacity: 0.4;
+}
+
+.animated-dots-bg::after {
+  content: '';
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  width: 150%;
+  height: 150%;
+  background-image: 
+    radial-gradient(circle at 30% 70%, var(--color-accent) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 70% 40%, var(--color-primary) 1px, transparent 1px),
+    radial-gradient(circle at 50% 10%, var(--color-secondary) 2px, transparent 2px),
+    radial-gradient(circle at 85% 85%, var(--color-accent) 1px, transparent 1px);
+  background-size: 
+    140px 140px,
+    110px 110px,
+    190px 190px,
+    130px 130px;
+  animation: dots-float-2 15s ease-in-out infinite reverse;
+  opacity: 0.3;
+}
+
+/* Mobile optimized version */
+@media (max-width: 768px) {
+  .animated-dots-bg::before {
+    background-size: 
+      100px 100px,
+      130px 130px,
+      70px 70px,
+      120px 120px,
+      80px 80px,
+      110px 110px;
+    animation-duration: 25s;
+  }
+  
+  .animated-dots-bg::after {
+    background-size: 
+      90px 90px,
+      75px 75px,
+      125px 125px,
+      85px 85px;
+    animation-duration: 18s;
+  }
+}
+
+/* Connection lines animation */
+.dots-with-connections {
+  position: relative;
+}
+
+.dots-with-connections::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(45deg, transparent 45%, var(--color-primary) 50%, transparent 55%),
+    linear-gradient(-45deg, transparent 45%, var(--color-secondary) 50%, transparent 55%),
+    linear-gradient(0deg, transparent 48%, var(--color-accent) 50%, transparent 52%);
+  background-size: 
+    200px 200px,
+    250px 250px,
+    150px 150px;
+  background-position: 
+    0 0,
+    100px 100px,
+    50px 50px;
+  opacity: 0.1;
+  animation: connection-pulse 8s ease-in-out infinite;
+}
+
 /* Clean animations without debug borders */

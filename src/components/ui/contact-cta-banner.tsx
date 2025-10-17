@@ -7,32 +7,9 @@ import { AnimatedSection, FadeIn } from '@/components/ui/animated-section'
 export function ContactCTABanner() {
   return (
     <section className="py-20 bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 relative overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
-        {/* Mobile Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-25 md:hidden"
-        >
-          <source src="/videos/connected-dots-mobile.mp4" type="video/mp4" />
-        </video>
-        
-        {/* Desktop Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-25 hidden md:block"
-        >
-          <source src="/videos/connected-dots-desktop.mp4" type="video/mp4" />
-        </video>
-        
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20" />
-      </div>
+      {/* Animated Dots Background */}
+      <div className="animated-dots-bg dots-with-connections opacity-70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 z-[2]" />
       
       <div className={`${containerStyles} relative z-10`}>
         <AnimatedSection>

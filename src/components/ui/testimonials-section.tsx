@@ -7,32 +7,9 @@ import { AnimatedSection, ScaleIn } from '@/components/ui/animated-section'
 export function TestimonialsSection() {
   return (
     <section className="py-20 relative overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
-        {/* Mobile Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-15 md:hidden"
-        >
-          <source src="/videos/connected-dots-mobile.mp4" type="video/mp4" />
-        </video>
-        
-        {/* Desktop Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-15 hidden md:block"
-        >
-          <source src="/videos/connected-dots-desktop.mp4" type="video/mp4" />
-        </video>
-        
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80" />
-      </div>
+      {/* Animated Dots Background */}
+      <div className="animated-dots-bg opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80 z-[2]" />
       
       <div className={`${containerStyles} relative z-10`}>
         {/* Header with slide-up animation */}

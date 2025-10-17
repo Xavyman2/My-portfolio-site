@@ -28,32 +28,9 @@ const values = [
 export function ValueProposition() {
   return (
     <section className="py-20 bg-muted/30 relative overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
-        {/* Mobile Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-20 md:hidden"
-        >
-          <source src="/videos/connected-dots-mobile.mp4" type="video/mp4" />
-        </video>
-        
-        {/* Desktop Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-20 hidden md:block"
-        >
-          <source src="/videos/connected-dots-desktop.mp4" type="video/mp4" />
-        </video>
-        
-        <div className="absolute inset-0 bg-gradient-to-b from-muted/50 via-muted/30 to-muted/50" />
-      </div>
+      {/* Animated Dots Background */}
+      <div className="animated-dots-bg opacity-60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-muted/50 via-muted/30 to-muted/50 z-[2]" />
       
       <div className={`${containerStyles} relative z-10`}>
         {/* Header with slide-up animation */}
