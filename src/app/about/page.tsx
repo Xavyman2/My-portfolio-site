@@ -32,26 +32,26 @@ const timeline = [
   {
     year: '2024',
     title: 'Senior Full-stack Developer',
-    company: 'Tech Solutions Inc.',
-    description: 'Leading development of enterprise Next.js applications, mentoring junior developers, and implementing best practices.',
+    company: 'OpenRouter',
+    description: 'Leading development of enterprise Next.js applications, mentoring junior developers, and implementing best practices at the company I co-created.',
   },
   {
     year: '2022',
     title: 'Full-stack Developer',
-    company: 'Digital Agency Co.',
+    company: 'OpenRouter',
     description: 'Built and maintained client websites using modern web technologies, focusing on performance and user experience.',
   },
   {
     year: '2020',
     title: 'Frontend Developer',
-    company: 'Startup Labs',
+    company: 'OpenRouter',
     description: 'Developed responsive web applications and collaborated with design teams to create pixel-perfect interfaces.',
   },
   {
     year: '2019',
-    title: 'Started Professional Journey',
-    company: 'Freelance',
-    description: 'Began freelancing and building websites for small businesses while continuously learning new technologies.',
+    title: 'Co-Founded OpenRouter',
+    company: 'OpenRouter',
+    description: 'Started as a curious individual with partners, co-creating OpenRouter and continuously improving my skills through hands-on experience.',
   },
 ]
 
@@ -145,11 +145,11 @@ export default function AboutPage() {
                   About Me
                 </h1>
                 <p className="text-lg md:text-xl mb-4 leading-relaxed" style={{ color: 'var(--color-foreground)', opacity: 0.8 }}>
-                  I'm a passionate Next.js developer with a love for creating beautiful, performant web experiences.
+                  I'm a passionate Next.js developer and co-founder of OpenRouter, with a love for creating beautiful, performant web experiences.
                 </p>
                 <p className="text-lg leading-relaxed mb-6" style={{ color: 'var(--color-foreground)', opacity: 0.7 }}>
-                  With years of experience in full-stack development, I specialize in building modern web applications 
-                  that are fast, accessible, and delightful to use.
+                  Since 2019, I started as a curious individual who co-created OpenRouter with partners. Through years of hands-on experience, 
+                  I've developed expertise in building modern web applications that are fast, accessible, and delightful to use.
                 </p>
                 
                 {/* Decorative stat highlights */}
@@ -159,11 +159,11 @@ export default function AboutPage() {
                     <div className="text-sm opacity-70">Years Exp.</div>
                   </div>
                   <div className="text-center p-4 rounded-lg" style={{ backgroundColor: 'var(--color-card)' }}>
-                    <div className="text-2xl font-bold font-poppins mb-1" style={{ color: 'var(--color-secondary)' }}>50+</div>
+                    <div className="text-2xl font-bold font-poppins mb-1" style={{ color: 'var(--color-secondary)' }}>23+</div>
                     <div className="text-sm opacity-70">Projects</div>
                   </div>
                   <div className="text-center p-4 rounded-lg" style={{ backgroundColor: 'var(--color-card)' }}>
-                    <div className="text-2xl font-bold font-poppins mb-1" style={{ color: 'var(--color-accent)' }}>100%</div>
+                    <div className="text-2xl font-bold font-poppins mb-1" style={{ color: 'var(--color-accent)' }}>96%</div>
                     <div className="text-sm opacity-70">Satisfied</div>
                   </div>
                 </div>
@@ -203,7 +203,7 @@ export default function AboutPage() {
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <span className="font-semibold mr-2">📍</span>
-                    <span>Based in [Your Location]</span>
+                    <span>Based in Mityana Municipality</span>
                   </li>
                   <li className="flex items-start">
                     <span className="font-semibold mr-2">💼</span>
@@ -211,7 +211,11 @@ export default function AboutPage() {
                   </li>
                   <li className="flex items-start">
                     <span className="font-semibold mr-2">🏆</span>
-                    <span>50+ successful projects delivered</span>
+                    <span>23+ successful projects delivered</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="font-semibold mr-2">🚀</span>
+                    <span>Co-founder of OpenRouter</span>
                   </li>
                   <li className="flex items-start">
                     <span className="font-semibold mr-2">🎓</span>

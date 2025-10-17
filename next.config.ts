@@ -27,8 +27,11 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   
-  // Trailing slash for better static hosting compatibility
-  trailingSlash: true,
+  // Remove trailing slash for better compatibility
+  trailingSlash: false,
+  
+  // Disable automatic static optimization for better routing
+  distDir: '.next',
 };
 
 export default nextConfig;
