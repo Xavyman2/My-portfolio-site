@@ -88,34 +88,6 @@ export const projects: Project[] = [
       { label: 'Page Load Speed', value: '1.8s' },
     ],
   },
-  {
-    id: 'saas-dashboard',
-    slug: 'saas-dashboard',
-    title: 'SaaS Analytics Dashboard',
-    description: 'A comprehensive analytics dashboard for SaaS businesses',
-    longDescription: 'A powerful analytics dashboard providing real-time insights for SaaS businesses. Features advanced charts, user management, and customizable reporting.',
-    image: '/projects/saas-hero.svg',
-    images: [
-      '/projects/saas-hero.svg',
-      '/projects/saas-hero.svg',
-      '/projects/saas-hero.svg',
-    ],
-    technologies: ['Next.js', 'TypeScript', 'Chart.js', 'Tailwind CSS', 'Supabase'],
-    tags: ['Next.js', 'TypeScript', 'Analytics', 'Charts', 'Supabase'],
-    liveUrl: 'https://example-saas.vercel.app',
-    featured: false,
-    category: 'web',
-    timeline: '4 months',
-    role: 'Full-stack Developer',
-    problem: 'SaaS company needed a way to visualize complex analytics data for their users',
-    solution: 'Developed an intuitive dashboard with interactive charts and real-time data updates',
-    outcome: 'Improved user engagement by 40% and reduced support tickets by 25%',
-    metrics: [
-      { label: 'User Engagement', value: '+40%' },
-      { label: 'Support Tickets', value: '-25%' },
-      { label: 'Load Time', value: '1.2s' },
-    ],
-  },
 ]
 
 export const testimonials: Testimonial[] = [

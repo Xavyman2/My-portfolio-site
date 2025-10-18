@@ -427,3 +427,71 @@ body {
 }
 
 /* Clean animations without debug borders */
+
+/* Project Completion Symbol Animation */
+.project-completion-symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  position: relative;
+  animation: completion-pulse 2s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-completion-symbol::before {
+  content: '✓';
+  color: white;
+  font-size: 0.875rem;
+  font-weight: bold;
+  animation: checkmark-bounce 1.5s ease-in-out infinite;
+}
+
+.project-completion-symbol.small {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.project-completion-symbol.small::before {
+  font-size: 0.75rem;
+}
+
+@keyframes completion-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes checkmark-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Project completion text animation */
+.project-completed-text {
+  color: var(--color-primary);
+  font-weight: 600;
+  animation: text-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes text-glow {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 8px var(--color-primary);
+  }
+}

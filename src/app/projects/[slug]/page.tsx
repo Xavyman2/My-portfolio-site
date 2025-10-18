@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { AnimatedSection, FadeIn, SlideInLeft, SlideInRight } from '@/components/ui/animated-section'
 import { projects } from '@/data/content'
 import { containerStyles } from '@/lib/utils'
-import { ExternalLink, Github, ArrowLeft } from 'lucide-react'
+import { ExternalLink, ArrowLeft } from 'lucide-react'
 import { JsonLd, generateProjectSchema, generateBreadcrumbSchema } from '@/lib/structured-data'
 
 type Props = {
@@ -109,18 +109,11 @@ export default async function ProjectDetailPage({ params }: Props) {
                     View Live Site
                   </a>
                 )}
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 font-medium rounded-md transition-colors hover:opacity-90"
-                    style={{ backgroundColor: 'var(--color-muted)', color: 'var(--color-foreground)' }}
-                  >
-                    <Github className="w-4 h-4" />
-                    View Code
-                  </a>
-                )}
+                <div className="inline-flex items-center gap-2 px-6 py-3 font-medium rounded-md transition-colors" 
+                     style={{ backgroundColor: 'var(--color-muted)', color: 'var(--color-foreground)' }}>
+                  <div className="project-completion-symbol" title="Project Completed"></div>
+                  <span className="project-completed-text">Project Completed</span>
+                </div>
               </div>
             </div>
           </AnimatedSection>

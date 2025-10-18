@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Project } from '@/types'
 import { cn } from '@/lib/utils'
@@ -115,13 +115,8 @@ export function ProjectCard({ project, className, compact = false }: ProjectCard
                 </a>
               </Button>
             )}
-            {project.githubUrl && (
-              <Button variant="ghost" size="icon" asChild>
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="View source code">
-                  <Github className="h-4 w-4" />
-                </a>
-              </Button>
-            )}
+            <div className="project-completion-symbol small" title="Project Completed">
+            </div>
           </div>
         </div>
         
